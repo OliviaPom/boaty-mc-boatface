@@ -10,10 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_08_17_145111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "boats", force: :cascade do |t|
     t.string "brand"
@@ -46,4 +48,5 @@ ActiveRecord::Schema.define(version: 2020_08_17_145111) do
 
   add_foreign_key "bookings", "boats"
   add_foreign_key "bookings", "users"
+
 end
