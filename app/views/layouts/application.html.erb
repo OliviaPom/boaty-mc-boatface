@@ -4,7 +4,6 @@
     <title>BoatyMcBoatface</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -12,10 +11,12 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
 </html>
 
- <!-- <p class="notice"><%= notice %></p> -->
- <!-- <p class="alert"><%= alert %></p>  -->
- <!-- these classes are for devise alert banners -->
+
