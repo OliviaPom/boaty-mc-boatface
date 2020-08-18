@@ -1,9 +1,9 @@
 class BoatsController < ApplicationController
 
   def index
-      @boats = Boat.all
+    @boats = Boat.all
   end
-  
+
   def new
     @boat = Boat.new
   end
@@ -15,6 +15,7 @@ class BoatsController < ApplicationController
     else
       render :new
     end
+  end
 
   def show
     @boat = Boat.find(params[:id])
@@ -41,6 +42,5 @@ class BoatsController < ApplicationController
     params.require(:boat).permit(:name)
     params.require(:boat).permit(:brand, :price, :location, :name, :category)
   end
- 
 
 end
