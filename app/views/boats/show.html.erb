@@ -9,5 +9,10 @@
 
 <%#= link_to "book now", new_booking_path %>
 
+<%= link_to "Delete #{@boat.name}",
+              boat_path(@boat),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
 
 <%= link_to "home", root_path %>
