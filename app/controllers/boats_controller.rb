@@ -1,7 +1,7 @@
 class BoatsController < ApplicationController
 
   def index
-    # @boats = Boat.all
+    @boats = Boat.all
   end
 
   def new
@@ -11,7 +11,7 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     if @boat.save
-      redirect_to boat_path(@boat)
+      redirect_to root_path
     else
       render :new
     end
