@@ -32,7 +32,7 @@
 
 <div>
   <h1>pending requests boats I want to rent</h1>
-  <% @bookings_ive_made.(accepted: false).each do |booking| %>
+  <% @bookings_ive_made.where(accepted: false).each do |booking| %>
   <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
   <% end %>
 </div>
@@ -40,11 +40,11 @@
 
 <div>
   <h1>my confirmed boat bookings</h1>
-  <% @bookings_ive_made.(accepted: true).each do |booking| %>
+  <% @bookings_ive_made.where(accepted: true).each do |booking| %>
   <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
   <% end %>
 </div>
 
-<%= link_to 'create a booking', new_booking_path(@bookings), class: "btn btn-primary" %>
+<%#= link_to 'create a booking', new_booking_path, class: "btn btn-primary" %>
 
 <%= link_to 'home', root_path, class: "btn btn-primary" %>
