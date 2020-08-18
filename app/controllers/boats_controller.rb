@@ -1,24 +1,34 @@
 class BoatsController < ApplicationController
 
- def index
-    @boats = Boat.all
- end
 
-def show
-  @boat = Boat.find(params[:id])
-end
+  def index
+      @boats = Boat.all
+  end
 
-def destroy
- @boat = Boat.find(params[:id])
- @boat.destroy
- redirect_to boats_path
-end
+  def show
+    @boat = Boat.find(params[:id])
+  end
 
+  def edit
+    @boat = Boat.find(params[:id])
+  end
 
-private
+  def update
+    @boat.update(boat_params)
+    redirect_to boat_path(@boat)
+  end
 
-def boat_params
-params.require(:boat).permit(:brand, :price, :location, :category, :name)
-end
+  def destroy
+    @boat = Boat.find(params[:id])
+    @boat.destroy
+    redirect_to boats_path
+  end
 
+  private
+
+  def boat_params
+    params.require(:boat).permit(:name)
+    params.require(:boat).permit(:brand, :price, :location, :name, :category)
+  end
+ 
 end
