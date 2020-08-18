@@ -6,4 +6,31 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-boats = Boat.create [ brand: , price: , location: , type: ]
+
+Boat.destroy_all
+User.destroy_all
+
+puts "creating new boats"
+
+[
+  {name: 'Sunseeker', brand: 'Portofino 53', price: '1940', category: 'yacht', location: 'Ibiza'},
+  {name: 'Portofino 53', brand: 'Sunseeker', price: '1940', category: 'yacht', location: 'Italy'},
+  {name: 'V55', brand: 'Princess', price: '2236', category: 'yacht', location: 'Croatia'},
+  {name: 'C52', brand: 'Sessa Marine', price: '2460', category: 'yacht', location: 'Greece'},
+  {name: 'Lagoon 380 S2', brand: 'Ploto', price: '400', category: 'catamaran', location: 'Spain'},
+  {name: 'Astrea 42', brand: 'Fountain Pajot', price: '1147', category: 'catamaran', location: 'Spain'},
+  {name: '278 SS', brand: 'Montery', price: '619', category: 'motorboat', location: 'Portugal'},
+  {name: 'Voyager 19S', brand: 'Ranieri', price: '370', category: 'motorboat', location: 'Ibiza'}
+].each do |attributes|
+  boat = Boat.create!(attributes)
+  puts "Created #{boat.name}"
+end
+
+
+
+# puts "creating new users"
+# User.create(firstname: 'Alice' , lastname: 'renter' , email: "renter@example.com", password: "renter123")
+# User.create(firstname: 'Leo', lastname: 'owner', email: "owner@example.com", password: "owner123")
+
+puts "completed"
+

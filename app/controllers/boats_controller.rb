@@ -1,7 +1,7 @@
 class BoatsController < ApplicationController
 
   def index
-      @boats = Boat.all
+    @boats = Boat.all
   end
 
   def new
@@ -39,9 +39,11 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name)
     params.require(:boat).permit(:brand, :price, :location, :name, :category)
   end
+<<<<<<< HEAD
 
+=======
+>>>>>>> e25938f7d6891b073c5fc0eb3b08eda4de1fe0dc
 
 end
