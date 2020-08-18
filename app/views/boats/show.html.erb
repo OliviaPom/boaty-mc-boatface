@@ -1,0 +1,12 @@
+<h1>more information on a specific boat</h1>
+
+<h2><%= @boat.name %></h2>
+<h2><%= @boat.brand %></h2>
+<h3><%= @boat.location %></h3>
+<h3>£<%= @boat.price %></h3>
+<h3><%= @boat.category %></h3>
+
+
+<%= link_to "BOOK NOW!", new_boat_path %>
+
+<%= link_to "back", boats_path %>
