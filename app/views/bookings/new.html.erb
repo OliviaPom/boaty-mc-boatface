@@ -1,9 +1,6 @@
 <%= simple_form_for [ @boat ] do |f| %>
-  <%= f.input :name%>
-  <%= f.input :location %>
-  <%= f.input :price %>
-  <%= f.input :brand %>
-  <%= f.input :category %>
+  <%= f.input :start_date%>
+  <%= f.input :end_date %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
 
