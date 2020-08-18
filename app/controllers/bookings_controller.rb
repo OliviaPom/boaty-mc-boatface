@@ -7,8 +7,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @boat = Boat.find(params[:boat_id])
     @booking.boat = @boat
-    @booking.save
-    redirect_to boat_path(@boat)
+    if @booking.save
+      redirect_to boat_path(@boat)
+    else
+      render :new
+      # render 'boats/show'
+    end
   end
 
   def edit
@@ -16,14 +20,16 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
-    redirect_to dashboard_path
+    if @booking.update(booking_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
   end
 
-    private
+  private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :accepted)
   end
-
 end
