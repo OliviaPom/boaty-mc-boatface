@@ -6,8 +6,13 @@
 <h3>£<%= @boat.price %></h3>
 <h3><%= @boat.category %></h3>
 
+<%= simple_form_for [ @boat, @booking ] do |f| %>
+  <%= f.input :start_date%>
+  <%= f.input :end_date %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
 
-<%#= link_to "book now", new_booking_path %>
+<%= link_to 'home', root_path, class: "btn btn-primary"%>
 
 <%= link_to "Delete #{@boat.name}",
               boat_path(@boat),
@@ -15,4 +20,3 @@
             data: { confirm: "Are you sure?" } %>
 
 
-<%= link_to "home", root_path %>
