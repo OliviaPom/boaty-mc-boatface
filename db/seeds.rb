@@ -10,6 +10,11 @@
 Boat.destroy_all
 User.destroy_all
 
+puts "creating new users"
+user1 = User.create!(firstname: 'Alice' , lastname: 'renter' , email: "renter@example.com", password: "renter123")
+user2 = User.create!(firstname: 'Leo', lastname: 'owner', email: "owner@example.com", password: "owner123")
+user3 = User.create!(firstname: 'Clancy', lastname: 'owner', email: "owner2@example.com", password: "owner123")
+
 puts "creating new boats"
 
 [
@@ -22,15 +27,12 @@ puts "creating new boats"
   {name: '278 SS', brand: 'Montery', price: '619', category: 'motorboat', location: 'Portugal'},
   {name: 'Voyager 19S', brand: 'Ranieri', price: '370', category: 'motorboat', location: 'Ibiza'}
 ].each do |attributes|
-  boat = Boat.create!(attributes)
+  boat = Boat.new(attributes)
+  boat.user = user2
+  boat.save!
   puts "Created #{boat.name}"
 end
 
-
-
-# puts "creating new users"
-# User.create(firstname: 'Alice' , lastname: 'renter' , email: "renter@example.com", password: "renter123")
-# User.create(firstname: 'Leo', lastname: 'owner', email: "owner@example.com", password: "owner123")
 
 puts "completed"
 

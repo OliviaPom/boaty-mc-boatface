@@ -1,5 +1,5 @@
 <ul>
-  <% @boats.each do |boat| %>
-    <li><%= link_to boat.name boat_path(boat) %></li>
+  <% boats.each do |boat| %>
+    <li><%= link_to boat.name, boat_path(boat) %></li>
   <% end %>
 </ul>
