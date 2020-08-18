@@ -1,10 +1,12 @@
 class PagesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: :home
+  before_action :authenticate_user!, only: [:dashboard]
+
   def home
   end
 
   def dashboard
-    @myboats = current.user
-    @mybookings = current.user
+    @myboats = current_user.boats
+    @bookings_ive_made = current_user.bookings
+    @bookings_people_have_made_for_my_boats = current_user.boats_bookings
   end
 end

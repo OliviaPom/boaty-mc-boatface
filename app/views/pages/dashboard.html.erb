@@ -1,0 +1,50 @@
+
+<h1>Welcome to your dashboard</h1>
+
+
+<div>
+  <h1>pending requests for my boats</h1>
+  <% @bookings_people_have_made_for_my_boats.where(accepted: false).each do |booking|%>
+  <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+  <% end %>
+</div>
+
+<div>
+  <h1>confirmed bookings for my boats</h1>
+  <% @bookings_people_have_made_for_my_boats.where(accepted: true).each do |booking|%>
+  <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+  <% end %>
+</div>
+
+
+
+<div>
+  <h1>a list of my boats</h1>
+  <% @my_boats.each do |booking| %>
+  <%= boat.name %>
+  <% end %>
+</div>
+
+<%= link_to 'create a new boat', new_boat_path(@boats), class: "btn btn-primary" %>
+
+
+
+
+<div>
+  <h1>pending requests boats I want to rent</h1>
+  <% @bookings_ive_made.(accepted: false).each do |booking| %>
+  <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+  <% end %>
+</div>
+
+
+<div>
+  <h1>my confirmed boat bookings</h1>
+  <% @bookings_ive_made.(accepted: true).each do |booking| %>
+  <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+  <% end %>
+</div>
+
+<%= link_to 'create a booking', new_booking_path(@bookings), class: "btn btn-primary" %>
+
+<%= link_to 'home', root_path, class: "btn btn-primary" %>
