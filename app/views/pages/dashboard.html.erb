@@ -1,50 +1,106 @@
-
-<h1>Welcome to your dashboard</h1>
-
-
-<div>
-  <h1>pending requests for my boats</h1>
-  <% @bookings_people_have_made_for_my_boats.where(accepted: false).each do |booking|%>
-  <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
-  <% end %>
-</div>
-
-<div>
-  <h1>confirmed bookings for my boats</h1>
-  <% @bookings_people_have_made_for_my_boats.where(accepted: true).each do |booking|%>
-  <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
-  <% end %>
+<div class="jumbotron jumbotron-fluid bg-primary text-white">
+  <div class="container text-sm-center pt-5">
+    <h1>Dashboard</h1>
+    <h3>Manage your account here</h3>
+  </div>
 </div>
 
 
 
-<div>
-  <h1>a list of my boats</h1>
-  <% @my_boats.each do |booking| %>
-  <%= boat.name %>
-  <% end %>
+<div class= "container">
+
+  <h1 id="speakers" class="display-4 text-left my-5 text-muted">Your Boats</h1>
+    <div class="row">
+      <div class="col-md-10">
+        <div class="card mb-3">
+          <i class="fas fa-ship"></i>
+          <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
+          <div class="card-body">
+          <h5 class="card-title">pending requests with my boats</h5>
+        <% @bookings_people_have_made_for_my_boats.where(accepted: false).each do |booking|%>
+        <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+        <% end %>
+        <p class="card-text">list of pending bookings...</p>
+         </div>
+      </div>
+    </div>
+  </div>
+
+
+   <div class="row">
+      <div class="col-md-10">
+        <div class="card mb-3">
+          <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-body">
+    <h5 class="card-title">confirmed bookings for my boats</h5>
+      <% @bookings_people_have_made_for_my_boats.where(accepted: true).each do |booking|%>
+      <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+      <% end %>
+    <p class="card-text">list of completed bookings</p>
+  </div>
+  </div>
+    </div>
+   </div>
+
+   <div class="row">
+      <div class="col-md-10">
+        <div class="card mb-3">
+          <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">view your boats</h5>
+            <% @my_boats.each do |booking| %>
+              <%= boat.name %>
+            <% end %>
+          <p class="card-text">all my boats</p>
+        </div>
+        </div>
+    </div>
+  </div>
+    <%= link_to 'create a new boat', new_boat_path(@boats), class: "btn btn-primary" %>
 </div>
 
-<%= link_to 'create a new boat', new_boat_path(@boats), class: "btn btn-primary" %>
 
 
 
+<div class= "container">
 
-<div>
-  <h1>pending requests boats I want to rent</h1>
-  <% @bookings_ive_made.where(accepted: false).each do |booking| %>
-  <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
-  <% end %>
-</div>
+  <h1 id="speakers" class="display-4 text-left my-5 text-muted">Your Bookings</h1>
 
 
-<div>
-  <h1>my confirmed boat bookings</h1>
-  <% @bookings_ive_made.where(accepted: true).each do |booking| %>
-  <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
-  <% end %>
+   <div class="row">
+      <div class="col-md-10">
+        <div class="card mb-3">
+          <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
+        <div class="card-body">
+           <h5 class="card-title">my pending bookings</h5>
+          <% @bookings_ive_made.where(accepted: false).each do |booking| %>
+          <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+          <% end %>
+          <p class="card-text">need content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <div class="row">
+      <div class="col-md-10">
+        <div class="card mb-3">
+          <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">my confirmed bookings</h5>
+            <% @bookings_ive_made.where(accepted: true).each do |booking| %>
+            <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+            <% end %>
+          <p class="card-text">need content.</p>
+        </div>
+        </div>
+      </div>
+   </div>
 </div>
 
 <%#= link_to 'create a booking', new_booking_path, class: "btn btn-primary" %>
 
-<%= link_to 'home', root_path, class: "btn btn-primary" %>
+ <%= link_to 'home', root_path, class: "btn btn-primary" %>
+
+
