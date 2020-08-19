@@ -13,6 +13,14 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept_booking
+    booking = Booking.find(params[:booking])
+    booking.accepted = true
+    if booking.save
+      redirect_to dashboard_path
+    end
+  end
+
   def edit
     @booking = Booking.find(params[:id])
   end

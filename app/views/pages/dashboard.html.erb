@@ -52,11 +52,11 @@
               <%= boat.name %>
             <% end %>
           <p class="card-text">all my boats</p>
+           <%= link_to 'create a new boat', new_boat_path(@boats), class: "btn btn-primary" %>
         </div>
         </div>
     </div>
   </div>
-    <%= link_to 'create a new boat', new_boat_path(@boats), class: "btn btn-primary" %>
 </div>
 
 
@@ -75,6 +75,7 @@
            <h5 class="card-title">my pending bookings</h5>
           <% @bookings_ive_made.where(accepted: false).each do |booking| %>
             <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+           <%= link_to 'accept booking', confirmed_path(booking: booking), class: "btn btn-primary" %>
           <% end %>
           <p class="card-text">need content.</p>
         </div>
