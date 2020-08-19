@@ -17,10 +17,10 @@
           <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
           <div class="card-body">
           <h5 class="card-title">pending requests with my boats</h5>
-        <% @bookings_people_have_made_for_my_boats.where(accepted: false).each do |booking|%>
-          <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
-        <% end %>
-        <p class="card-text">list of pending bookings...</p>
+            <% @bookings_people_have_made_for_my_boats.where(accepted: false).each do |booking|%>
+              <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+            <% end %>
+            <p class="card-text">list of pending bookings...</p>
          </div>
       </div>
     </div>
@@ -32,14 +32,14 @@
         <div class="card mb-3">
           <img class="card-img-top" src="" alt="Card image cap">
             <div class="card-body">
-    <h5 class="card-title">confirmed bookings for my boats</h5>
-      <% @bookings_people_have_made_for_my_boats.where(accepted: true).each do |booking|%>
-        <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
-      <% end %>
-    <p class="card-text">list of completed bookings</p>
-  </div>
-  </div>
-    </div>
+              <h5 class="card-title">confirmed bookings for my boats</h5>
+                <% @bookings_people_have_made_for_my_boats.where(accepted: true).each do |booking|%>
+                  <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+                    <% end %>
+                    <p class="card-text">list of completed bookings</p>
+               </div>
+            </div>
+        </div>
    </div>
 
    <div class="row">
@@ -56,6 +56,7 @@
         </div>
         </div>
     </div>
+
   </div>
 </div>
 
@@ -78,6 +79,7 @@
            <%= link_to 'accept booking', confirmed_path(booking: booking), class: "btn btn-primary" %>
           <% end %>
           <p class="card-text">need content.</p>
+
         </div>
       </div>
     </div>
