@@ -1,12 +1,30 @@
-<h1>Boaty McBoatface</h1>
-<p>Some slogan here</p>
 
 <div class="container">
-  <h2>Our hot offers..</h2>
-  <%= render 'shared/index', boats: @boats %>
+  <h1>The best place to find your dream boats</h1>
+
+  <!-- iterate over to show 3 boats as hot offers eg -->
+  <h2>Our newest boats</h2>
+
+  <div class="d-flex flex-row bd-highlight mb-3">
+    <% @boats.last(3).each do |boat| %>
+    <div class="p-2 bd-highlight">
+      <div class="card mb-3">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= link_to boat.name, boat_path(boat) %>
+          </h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted"><%= boat.location %></small></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+<%= link_to 'See all boats', boats_path, class: "btn btn-primary"%>
+<!-- end of container -->
 </div>
 
 
-<!-- iterate over to show 3 boats as hot offers eg -->
-<%= link_to 'See all boats', boats_path, class: "btn btn-primary"%>
 
