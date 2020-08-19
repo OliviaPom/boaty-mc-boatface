@@ -3,18 +3,16 @@
     <h1>Boaty McBoatface</h1>
     <p>Your dream boat awaits...</p>
     <div class='banner-button'>
-      <a><%= link_to 'See all boats', boats_path, class: "btn btn-primary"%></a>
+      <%= link_to 'See all boats', boats_path, class: "btn btn-primary btn-lg border-light shadow"%>
     </div>
   </div>
 </div>
 
 
 <div class="container h-100">
- 
 
-<div class="container">
   <!-- iterate over to show 3 boats as hot offers eg -->
-  <h2>Our newest boats</h2>
+  <h2 class="my-4">Our newest boats</h2>
 
   <div class="d-flex flex-row bd-highlight mb-3">
     <% @boats.last(3).each do |boat| %>
@@ -33,8 +31,5 @@
     </div>
     <% end %>
   </div>
-
 </div>
-
-
 
