@@ -1,3 +1,4 @@
+
 <div class="container">
   <h1>The best place to find your dream boats</h1>
 
@@ -21,14 +22,9 @@
     <% end %>
   </div>
 
-  <!-- full list of boats -->
-  <h2>Our newest boats</h2>
-  <%= render 'shared/index', boats: @boats %>
-
-
+<%= link_to 'See all boats', boats_path, class: "btn btn-primary"%>
 <!-- end of container -->
 </div>
-
 
 
 
