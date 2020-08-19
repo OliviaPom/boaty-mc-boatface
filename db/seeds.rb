@@ -18,14 +18,14 @@ user3 = User.create!(firstname: 'Clancy', lastname: 'owner', email: "owner2@exam
 puts "creating new boats"
 
 [
-  {name: 'Sunseeker', brand: 'Portofino 53', price: '1940', category: 'yacht', location: 'Ibiza'},
-  {name: 'Portofino 53', brand: 'Sunseeker', price: '1940', category: 'yacht', location: 'Italy'},
-  {name: 'V55', brand: 'Princess', price: '2236', category: 'yacht', location: 'Croatia'},
-  {name: 'C52', brand: 'Sessa Marine', price: '2460', category: 'yacht', location: 'Greece'},
-  {name: 'Lagoon 380 S2', brand: 'Ploto', price: '400', category: 'catamaran', location: 'Spain'},
-  {name: 'Astrea 42', brand: 'Fountain Pajot', price: '1147', category: 'catamaran', location: 'Spain'},
-  {name: '278 SS', brand: 'Montery', price: '619', category: 'motorboat', location: 'Portugal'},
-  {name: 'Voyager 19S', brand: 'Ranieri', price: '370', category: 'motorboat', location: 'Ibiza'}
+  {name: 'Sunseeker', brand: 'Portofino 53', price: '1940', category: 'Yacht', location: 'Ibiza'},
+  {name: 'Portofino 53', brand: 'Sunseeker', price: '1940', category: 'Yacht', location: 'Italy'},
+  {name: 'V55', brand: 'Princess', price: '2236', category: 'Yacht', location: 'Croatia'},
+  {name: 'C52', brand: 'Sessa Marine', price: '2460', category: 'Yacht', location: 'Greece'},
+  {name: 'Lagoon 380 S2', brand: 'Ploto', price: '400', category: 'Catamaran', location: 'Spain'},
+  {name: 'Astrea 42', brand: 'Fountain Pajot', price: '1147', category: 'Catamaran', location: 'Spain'},
+  {name: '278 SS', brand: 'Montery', price: '619', category: 'Motorboat', location: 'Portugal'},
+  {name: 'Voyager 19S', brand: 'Ranieri', price: '370', category: 'Motorboat', location: 'Ibiza'}
 ].each do |attributes|
   boat = Boat.new(attributes)
   boat.user = user2
