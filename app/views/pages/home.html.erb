@@ -1,10 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Boaty McBoatface</h1>
+<p>Some slogan here</p>
 
 <div class="container">
-<%= render 'shared/index', boats: @boats %>
-
+  <h2>Our hot offers..</h2>
+  <%= render 'shared/index', boats: @boats %>
 </div>
 
 
 <!-- iterate over to show 3 boats as hot offers eg -->
+<%= link_to 'See all boats', boats_path, class: "btn btn-primary"%>
+
