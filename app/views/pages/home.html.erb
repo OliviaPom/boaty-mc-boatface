@@ -18,7 +18,7 @@
     <% @boats.last(3).each do |boat| %>
     <div class="p-2 bd-highlight">
       <div class="card mb-3 shadow rounded-lg">
-        <%= image_tag("/images/boat#{rand(1...10)}.jpeg", class: "card-img-top") %>
+        <%= image_tag("boat#{rand(1...10)}.jpeg", class: "card-img-top") %>
         <div class="card-body">
           <h5 class="card-title">
             <%= link_to boat.name, boat_path(boat) %>
