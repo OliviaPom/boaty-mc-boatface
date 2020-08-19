@@ -1,7 +1,18 @@
+<div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= asset_path('banner_image.jpg') %>);">
+  <div class="hero-text">
+    <h1>Boaty McBoatface</h1>
+    <p>Your dream boat awaits...</p>
+    <div class='banner-button'>
+      <a><%= link_to 'See all boats', boats_path, class: "btn btn-primary"%></a>
+    </div>
+  </div>
+</div>
+
 
 <div class="container h-100">
-  <h1>The best place to find your dream boats</h1>
+ 
 
+<div class="container">
   <!-- iterate over to show 3 boats as hot offers eg -->
   <h2>Our newest boats</h2>
 
@@ -23,8 +34,6 @@
     <% end %>
   </div>
 
-  <div class="text-center"><%= link_to 'See all boats', boats_path, class: "btn btn-lg btn-primary "%></div>
-<!-- end of container -->
 </div>
 
 
