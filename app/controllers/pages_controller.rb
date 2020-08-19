@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, only: [:dashboard]
 
   def home
-    @boats = Boat.all
+    @boats = Boat.all.sample(3)
   end
 
   def dashboard
