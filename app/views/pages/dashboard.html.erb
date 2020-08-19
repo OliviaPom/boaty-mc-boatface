@@ -18,7 +18,7 @@
           <div class="card-body">
           <h5 class="card-title">pending requests with my boats</h5>
         <% @bookings_people_have_made_for_my_boats.where(accepted: false).each do |booking|%>
-        <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+          <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
         <% end %>
         <p class="card-text">list of pending bookings...</p>
          </div>
@@ -34,7 +34,7 @@
             <div class="card-body">
     <h5 class="card-title">confirmed bookings for my boats</h5>
       <% @bookings_people_have_made_for_my_boats.where(accepted: true).each do |booking|%>
-      <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+        <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
       <% end %>
     <p class="card-text">list of completed bookings</p>
   </div>
@@ -48,7 +48,7 @@
           <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">view your boats</h5>
-            <% @my_boats.each do |booking| %>
+            <% @my_boats.each do |boat| %>
               <%= boat.name %>
             <% end %>
           <p class="card-text">all my boats</p>
@@ -74,7 +74,7 @@
         <div class="card-body">
            <h5 class="card-title">my pending bookings</h5>
           <% @bookings_ive_made.where(accepted: false).each do |booking| %>
-          <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+            <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
           <% end %>
           <p class="card-text">need content.</p>
         </div>
@@ -90,7 +90,7 @@
         <div class="card-body">
             <h5 class="card-title">my confirmed bookings</h5>
             <% @bookings_ive_made.where(accepted: true).each do |booking| %>
-            <%= boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+              <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
             <% end %>
           <p class="card-text">need content.</p>
         </div>
