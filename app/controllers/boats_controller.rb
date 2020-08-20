@@ -39,9 +39,17 @@ class BoatsController < ApplicationController
   end
 
   def update
-    @boat.update(boat_params)
-    redirect_to boat_path(@boat)
+    if current_user.boats.update(boat_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
   end
+
+  # def update
+  #   @boat.update(boat_params)
+  #   redirect_to boat_path(@boat)
+  # end
 
   def destroy
     @boat = Boat.find(params[:id])
