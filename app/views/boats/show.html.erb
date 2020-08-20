@@ -18,6 +18,7 @@
 </div>
 
 <div class>
+  <h3>please select your travel dates below</h3>
 <%= simple_form_for [ @boat, @booking ] do |f| %>
   <%= f.input :start_date, as: :date, html5: true %>
   <%= f.input :end_date, as: :date, html5: true %>
@@ -25,6 +26,5 @@
 <% end %>
 </div>
 
-<%= link_to 'home', root_path, class: "btn btn-primary"%>
 
 
