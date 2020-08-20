@@ -24,7 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'bootstrap-datepicker-rails'
+# gem 'bootstrap-datepicker-rails'
+gem 'cloudinary', '~> 1.12.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -38,6 +39,7 @@ gem 'pg_search', '~> 2.3.0'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'dotenv-rails'
   gem 'dotenv-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

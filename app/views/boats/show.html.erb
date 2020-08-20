@@ -2,7 +2,6 @@
 
 <h1 class="my-4">More info on Your Selected Boat </h1>
 
-<div class="container-md">
   <div class="d-flex flex-row bd-highlight mb-3">
      <div class="p-2 bd-highlight">
       <div class="card mb-3">
@@ -23,12 +22,20 @@
                 <td><span class="text-secondary"><%= @boat.location %></span</td>
               </tr>
               <tr>
-                <td>Price per day:</td>
+                <td>Price / day:</td>
                 <td><span class="text-secondary">£<%= number_with_delimiter(@boat.price, :delimiter => ',')  %></span></td>
               </tr>
               <tr>
                 <td>Category:</td>
                 <td><span class="text-secondary"><%= @boat.category %></span></td>
+              </tr>
+              <tr>
+                <td>Passengers:</td>
+                <td><span class="text-secondary"><%= @boat.number_passenger %></span></td>
+              </tr>
+              <tr>
+                <td>Description:</td>
+                <td><span class="text-secondary"><%= @boat.description %></span></td>
               </tr>
             </tbody>
           </table>
@@ -43,7 +50,7 @@
       <%= f.input :end_date, as: :date, html5: true %>
       <%= f.submit "Submit", class: "btn btn-warning" %>
     <% end %>
-
+  </div>
 
 <!-- closing container -->
 </div>
