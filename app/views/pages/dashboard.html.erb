@@ -92,6 +92,7 @@
              <%= link_to 'Add A Boat', new_boat_path(@boats), class: "btn btn-primary" %>
 
              <%@my_boats.each do |boat| %>
+                <%= link_to 'edit your boat', edit_boat_path(boat), class: "btn btn-primary" %>
               <%= link_to "Delete", boat_path(boat), class: "btn btn-primary",
                 method: :delete,
                 data: {confirm: "are you sure"} %>
