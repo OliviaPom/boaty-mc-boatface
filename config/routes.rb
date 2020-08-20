@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings, only: [ :create ]
   end
-  resources :bookings, only: [ :update, :edit ]
+  resources :bookings, only: [ :update, :edit, :destroy ]
 end
