@@ -9,15 +9,20 @@
 </div>
 
 
-<div class="container">
-<%= form_tag boats_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+  <form action="/boats" method="get">
+  <div class="product-search">
+      <div class="search-element">
+        <label class="search-label">Search types of Boats</label>
+        <input class="search-input" type="text" autocomplete="on" placeholder="Type" name="query">
+      </div>
+      <div class="search-element">
+        <label class="search-label">Search for a Location</label>
+        <input class="search-input" type="text" placeholder="Place" class="" autocomplete="on" name="location">
+      </div>
+      <input type="submit" class="search-button">
+  </div>
+</form>
+
 
   <!-- iterate over to show 3 boats as hot offers eg -->
   <h2 class="my-4">Our newest boats</h2>
@@ -38,6 +43,6 @@
       </div>
     </div>
     <% end %>
-  </div>
+
 </div>
 
