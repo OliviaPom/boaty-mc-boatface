@@ -17,8 +17,6 @@
           <% @bookings_ive_made.where(accepted: false).each do |booking| %>
 
          <li><i class="fas fa-ship"></i> <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d/%m/%Y") %> to <%= booking.end_date.strftime("%d/%m/%Y") %></li>
-
-          <% end %>
           <p class="card-text"></p>
 
             <%= link_to 'Edit your booking', edit_booking_path(booking), class: "btn btn-primary" %>
@@ -114,8 +112,6 @@
 </div>
 
 
-
-<%#= link_to 'create a booking', new_booking_path, class: "btn btn-primary" %>
 
 
 
