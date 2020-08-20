@@ -1,9 +1,55 @@
-<h1>Edit a Booking</h1>
+<div class="container">
+  <div class="p-2 bd-highlight">
+   <h2>Edit booking form here</h2>
+    <%= simple_form_for [ @booking ] do |f| %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true %>
+      <%= f.submit "Submit", class: "btn btn-warning" %>
+    <% end %>
+  </div>
 
-<%= form_with model: @boat, class: "edit-form" do |f|%>
-  <%= f.label :start_date %>
-  <%= f.text_field :start_date %>
-  <%= f.label :end_date %>
-  <%= f.text_field :end_date %>
-  <%= f.submit %>
-<% end %>
+<h1 class="my-4">More info on Your Selected Boat </h1>
+
+  <div class="d-flex flex-row bd-highlight mb-3">
+     <div class="p-2 bd-highlight">
+      <div class="card mb-3">
+       <%= image_tag("boat#{rand(1...10)}.jpeg", class: "card-img-top") %>
+        <div class="card-body">
+          <ul class="list-group">
+          <table class="table table-borderless table-sm">
+              <tr>
+                <td>Name:</td>
+                <td><span class="text-secondary"><%= @boat.name %></span></td>
+              </tr>
+              <tr>
+                <td>Brand:</td>
+                <td><span class="text-secondary"><%= @boat.brand %></span></td>
+              </tr>
+              <tr>
+                <td>Location:</td>
+                <td><span class="text-secondary"><%= @boat.location %></span</td>
+              </tr>
+              <tr>
+                <td>Price / day:</td>
+                <td><span class="text-secondary">£<%= number_with_delimiter(@boat.price, :delimiter => ',')  %></span></td>
+              </tr>
+              <tr>
+                <td>Category:</td>
+                <td><span class="text-secondary"><%= @boat.category %></span></td>
+              </tr>
+              <tr>
+                <td>Passengers:</td>
+                <td><span class="text-secondary"><%= @boat.number_passenger %></span></td>
+              </tr>
+              <tr>
+                <td>Description:</td>
+                <td><span class="text-secondary"><%= @boat.description %></span></td>
+              </tr>
+            </tbody>
+          </table>
+       </div>
+      </div>
+     </div>
+   </div>
+<!-- closing container -->
+</div>
