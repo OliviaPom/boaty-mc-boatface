@@ -1,20 +1,15 @@
 <div class="container">
 
-<h1 class="my-4">Edit a Boat </h1>
-
-
-<%= form_with model: @boat, class: "edit-form" do |f|%>
-  <%= f.label :brand %>
-  <%= f.text_field :brand %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-   <%= f.label :category %>
-  <%= f.text_field :category %>
-  <%= f.submit %>
-<% end %>
+  <h1 class="my-4">Edit a Boat </h1>
+  <%= simple_form_for [ @boat ] do |f| %>
+    <%= f.input :name%>
+    <%= f.input :location %>
+    <%= f.input :price, input_html: { placeholder: '£ per day..'}%>
+    <%= f.input :brand %>
+    <%= f.input :category %>
+    <%= f.input :photo, as: :file, class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
 
 </div>
+
