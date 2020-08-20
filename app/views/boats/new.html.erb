@@ -4,14 +4,14 @@
 <h1 class="my-4">List your Boat </h1>
 
     <%= simple_form_for [ @boat ] do |f| %>
-    <%= f.input :name%>
+    <%= f.input :name %>
     <%= f.input :location %>
     <%= f.input :price, input_html: { placeholder: '£ per day..'}%>
     <%= f.input :brand %>
     <%= f.input :category %>
     <%= f.input :number_passenger %>
     <%= f.input :description, as: :text, :input_html => { cols: 5, rows: 6, maxlength: 600} %>
-    <%= f.input :photo, as: :file, :label => "Upload boat photos",class: "btn btn-primary" %>
+    <%= f.input :photo, as: :file, :label => "Upload boat photo",class: "btn btn-primary" %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 
