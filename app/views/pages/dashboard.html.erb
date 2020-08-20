@@ -87,6 +87,7 @@
           <h5 class="card-title">view your boats</h5>
             <% @my_boats.each do |boat| %>
               <%= boat.name %>
+               <%= link_to 'edit your boat', edit_boat_path(boat), class: "btn btn-primary" %>
             <% end %>
           <p class="card-text">all my boats</p>
            <%= link_to 'create a new boat', new_boat_path(@boats), class: "btn btn-primary" %>
