@@ -1,7 +1,7 @@
 <div class="jumbotron jumbotron-fluid bg-primary text-white">
   <div class="container text-sm-center pt-5">
     <h1>Dashboard</h1>
-    <h3>Manage your account here</h3>
+    <h3>welcome <%= current_user.firstname %></h3>
   </div>
 </div>
 
@@ -17,8 +17,7 @@
         <div class="card-body">
            <h5 class="card-title">my pending bookings</h5>
           <% @bookings_ive_made.where(accepted: false).each do |booking| %>
-            <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
-           <%= link_to 'accept booking', confirmed_path(booking: booking), class: "btn btn-primary" %>
+            <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d %m %Y") %> to <%= booking.end_date.strftime("%d %m %Y") %>
           <% end %>
           <p class="card-text"></p>
 
@@ -35,7 +34,7 @@
         <div class="card-body">
             <h5 class="card-title">my confirmed bookings</h5>
             <% @bookings_ive_made.where(accepted: true).each do |booking| %>
-              <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+            <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d %m %Y") %> to <%= booking.end_date.strftime("%d %m %Y") %>
             <% end %>
           <p class="card-text"></p>
         </div>
@@ -55,7 +54,8 @@
           <div class="card-body">
           <h5 class="card-title">pending requests for my boats</h5>
             <% @bookings_people_have_made_for_my_boats.where(accepted: false).each do |booking|%>
-              <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+            <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d %m %Y") %> to <%= booking.end_date.strftime("%d %m %Y") %>
+               <%= link_to 'accept booking', confirmed_path(booking: booking), class: "btn btn-primary" %>
             <% end %>
             <p class="card-text">.</p>
          </div>
@@ -71,7 +71,7 @@
             <div class="card-body">
               <h5 class="card-title">confirmed bookings for my boats</h5>
                 <% @bookings_people_have_made_for_my_boats.where(accepted: true).each do |booking|%>
-                  <%= booking.boat.name %> - <%= booking.start_date %> - <%= booking.end_date %>
+                  <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d %m %Y") %> to <%= booking.end_date.strftime("%d %m %Y") %>
                     <% end %>
                     <p class="card-text">.</p>
                </div>
@@ -83,17 +83,25 @@
       <div class="col-md-10">
         <div class="card mb-3">
           <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">view your boats</h5>
-            <% @my_boats.each do |boat| %>
-              <%= boat.name %>
-            <% end %>
-          <p class="card-text">all my boats</p>
-           <%= link_to 'create a new boat', new_boat_path(@boats), class: "btn btn-primary" %>
-        </div>
-        </div>
-    </div>
+          <div class="card-body">
+            <h5 class="card-title">view your boats</h5>
+              <% @my_boats.each do |boat| %>
+                <%= boat.name %>
+              <% end %>
+            <p class="card-text"></p>
+             <%#= link_to 'Add A Boat', new_boat_path(@boats), class: "btn btn-primary" %>
 
+             <%@my_boats.each do |boat| %>
+                <%= link_to 'edit your boat', edit_boat_path(boat), class: "btn btn-primary" %>
+              <%= link_to "Delete", boat_path(boat), class: "btn btn-primary",
+                method: :delete,
+                data: {confirm: "are you sure"} %>
+             <% end %>
+          </div>
+           <%= link_to 'Add A Boat', new_boat_path(@boats), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
