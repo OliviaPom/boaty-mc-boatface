@@ -1,0 +1,62 @@
+// body, html {
+//     height: 100%;
+// }
+
+// /* The hero image */
+// .dashboard_image {
+//   display: flex;
+//   justify-content: left;
+//   align-items: center;
+
+//   /* Set a specific height */
+//   height: 40%;
+
+//   /* Position and center the image to scale nicely on all screens */
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   position: relative;
+// }
+
+/* Place text in the middle of the image */
+.dashboard_text {
+  text-align: center;
+  justify: center;
+  // margin-left: 24px;
+  color: white;
+  padding-left: 60px;
+  h1 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 60px;
+  }
+  p {
+    font-size: 24px;
+  }
+}
+
+.card-title {
+      position: absolute;
+    left: 15px;
+    top: 15px;
+    color: white;
+}
+
+.row1 img {
+  height: 60px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.row2 img {
+  height: 100%;
+  width: 30px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.card-body {
+   word-spacing: 8px;
+}

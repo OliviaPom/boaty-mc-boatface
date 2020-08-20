@@ -1,22 +1,34 @@
-<div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= asset_path('banner_image.jpg') %>);">
+<div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= asset_path('dashboard2.jpeg') %>);">
   <div class="hero-text">
     <h1>Boaty McBoatface</h1>
     <p>Your dream boat awaits...</p>
-    <div class='banner-button'>
-      <%= link_to 'See all boats', boats_path, class: "btn btn-primary btn-lg border-light shadow"%>
-    </div>
   </div>
 </div>
 
+  <form action="/boats" method="get">
+  <div class="product-search">
+      <div class="search-element">
+        <label class="search-label">Search types of Boats</label>
+        <input class="search-input" type="text" autocomplete="on" placeholder="Type" name="query">
+      </div>
+      <div class="search-element">
+        <label class="search-label">Search for a Location</label>
+        <input class="search-input" type="text" placeholder="Place" class="" autocomplete="on" name="location">
+      </div>
+      <input type="submit" class="search-button">
+  </div>
+</form>
+
 <div class="container">
-<%= form_tag boats_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+  <%= form_tag boats_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
   <!-- iterate over to show 3 boats as hot offers eg -->
   <h2 class="my-4">Our newest boats</h2>
@@ -39,6 +51,6 @@
       </div>
     </div>
     <% end %>
-  </div>
+
 </div>
 

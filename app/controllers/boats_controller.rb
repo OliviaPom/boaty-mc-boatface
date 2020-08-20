@@ -1,21 +1,17 @@
 class BoatsController < ApplicationController
   def index
-    categories = []
-    boats = Boat.all
-    boats.each do |boat|
-      categories << boat.category.downcase
-    end
-
+    @boats = Boat.all
     if params[:query].nil? || (params[:query] == "")
       @boats = Boat.all
-    elsif categories.include?(params[:query].downcase)
-      @boats = []
-      boats.each do |boat|
-        @boats << boat if boat.category.downcase == params[:query].downcase
-      end
-      return @boats
     else
-      @boats = Boat.near(params[:query], 20)
+      params[:query]
+       @boats = @boats.where('category ILIKE ?', params[:query])
+    end
+    if params[:location].nil? || (params[:location] == "")
+      @boats = Boat.all
+    else
+      params[:location]
+      @boats = @boats.near(params[:location], 20)
     end
   end
 

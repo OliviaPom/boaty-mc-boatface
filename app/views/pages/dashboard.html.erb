@@ -1,41 +1,48 @@
-<div class="jumbotron jumbotron-fluid bg-primary text-white">
-  <div class="container text-sm-center pt-5">
-    <h1>Dashboard</h1>
-    <h3>welcome <%= current_user.firstname %></h3>
+<div class= "dashboard_image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= asset_path('dashboard.jpeg') %>);">
+  <div class="dashboard_text">
+    <h1>Welcome to Your Dashboard, <strong><%= current_user.firstname %></strong></h1>
   </div>
 </div>
 
 <div class= "container">
 
+
+   <div class="row1">
+      <div class="col-md-10 offset-md-1">
   <h1 id="speakers" class="display-4 text-left my-5 text-muted">Your Bookings</h1>
-
-
-   <div class="row">
-      <div class="col-md-10">
         <div class="card mb-3">
-          <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
+           <%= image_tag("dashboard.jpeg", class: "card-img-top")%>
+           <h5 class="card-title"><strong>my pending bookings</strong></h5>
         <div class="card-body">
-           <h5 class="card-title">my pending bookings</h5>
           <% @bookings_ive_made.where(accepted: false).each do |booking| %>
-            <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d %m %Y") %> to <%= booking.end_date.strftime("%d %m %Y") %>
+
+         <li><i class="fas fa-ship"></i> <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d/%m/%Y") %> to <%= booking.end_date.strftime("%d/%m/%Y") %></li>
+
           <% end %>
           <p class="card-text"></p>
+
+            <%= link_to 'Edit your booking', edit_booking_path(booking), class: "btn btn-primary" %>
+            <%= link_to "Delete booking", booking_path(booking), class: "btn btn-primary",
+                method: :delete,
+                data: {confirm: "are you sure"} %>
+
+          <% end %>
+
         </div>
       </div>
     </div>
   </div>
 
-
-   <div class="row">
-      <div class="col-md-10">
+   <div class="row1">
+      <div class="col-md-10 offset-md-1">
         <div class="card mb-3">
-          <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
+          <%= image_tag("dashboard.jpeg", class: "card-img-top")%>
         <div class="card-body">
-            <h5 class="card-title">my confirmed bookings</h5>
+            <h5 class="card-title"><strong>my confirmed bookings</strong></h5>
+          </div>
             <% @bookings_ive_made.where(accepted: true).each do |booking| %>
-            <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d %m %Y") %> to <%= booking.end_date.strftime("%d %m %Y") %>
+            <li><%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d/%m/%Y") %> to <%= booking.end_date.strftime("%d/%m/%Y") %></li>
             <% end %>
-          <p class="card-text"></p>
         </div>
         </div>
       </div>
@@ -44,49 +51,52 @@
 
 <div class= "container">
 
-  <h1 id="speakers" class="display-4 text-left my-5 text-muted">Your Boats</h1>
-    <div class="row">
-      <div class="col-md-10">
+
+    <div class="row1">
+      <div class="col-md-10 offset-md-1">
+        <h1 id="speakers" class="display-4 text-left my-5 text-muted">Your Boats</h1>
         <div class="card mb-3">
-          <i class="fas fa-ship"></i>
-          <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
+         <%= image_tag("dashboard.jpeg", class: "card-img-top")%>
           <div class="card-body">
-          <h5 class="card-title">pending requests for my boats</h5>
+          <h5 class="card-title"><strong>pending requests for my boats</strong></h5>
             <% @bookings_people_have_made_for_my_boats.where(accepted: false).each do |booking|%>
-            <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d %m %Y") %> to <%= booking.end_date.strftime("%d %m %Y") %>
+            <li><%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d/%m/%Y") %> to <%= booking.end_date.strftime("%d/%m/%Y") %></li>
                <%= link_to 'accept booking', confirmed_path(booking: booking), class: "btn btn-primary" %>
             <% end %>
-            <p class="card-text">.</p>
          </div>
       </div>
     </div>
   </div>
 
+
    <div class="row">
       <div class="col-md-10">
+
+
+   <div class="row1">
+      <div class="col-md-10 offset-md-1">
+
         <div class="card mb-3">
-          <img class="card-img-top" src="" alt="Card image cap">
+          <%= image_tag("dashboard.jpeg", class: "card-img-top")%>
             <div class="card-body">
-              <h5 class="card-title">confirmed bookings for my boats</h5>
+              <h5 class="card-title"><strong>confirmed bookings for my boats</strong></h5>
                 <% @bookings_people_have_made_for_my_boats.where(accepted: true).each do |booking|%>
-                  <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d %m %Y") %> to <%= booking.end_date.strftime("%d %m %Y") %>
+                 <li><%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d/%m/%Y") %> to <%= booking.end_date.strftime("%d/%m/%Y") %></li>
                     <% end %>
-                    <p class="card-text">.</p>
                </div>
             </div>
         </div>
    </div>
 
-   <div class="row">
-      <div class="col-md-10">
+   <div class="row1">
+      <div class="col-md-10 offset-md-1">
         <div class="card mb-3">
-          <img class="card-img-top" src="images/surfer2.jpeg" alt="Card image cap">
+          <%= image_tag("dashboard.jpeg", class: "card-img-top")%>
           <div class="card-body">
-            <h5 class="card-title">view your boats</h5>
+            <h5 class="card-title"><strong>view your boats</strong></h5>
               <% @my_boats.each do |boat| %>
-                <%= boat.name %>
+               <li><%= boat.name %></li>
               <% end %>
-            <p class="card-text"></p>
              <%#= link_to 'Add A Boat', new_boat_path(@boats), class: "btn btn-primary" %>
 
              <%@my_boats.each do |boat| %>

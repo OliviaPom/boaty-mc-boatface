@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def create
     @booking = Booking.new(booking_params)
     @boat = Boat.find(params[:boat_id])
@@ -22,15 +21,22 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @boat = Booking.find(params[:id]).boat
     @booking = Booking.find(params[:id])
   end
 
   def update
-    if @booking.update(booking_params)
+    if current_user.bookings.update(booking_params)
       redirect_to dashboard_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path
   end
 
   private
