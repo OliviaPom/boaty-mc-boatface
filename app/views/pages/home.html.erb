@@ -5,6 +5,19 @@
   </div>
 </div>
 
+  <form action="/boats" method="get">
+  <div class="product-search">
+      <div class="search-element">
+        <label class="search-label">Search types of Boats</label>
+        <input class="search-input" type="text" autocomplete="on" placeholder="Type" name="query">
+      </div>
+      <div class="search-element">
+        <label class="search-label">Search for a Location</label>
+        <input class="search-input" type="text" placeholder="Place" class="" autocomplete="on" name="location">
+      </div>
+      <input type="submit" class="search-button">
+  </div>
+</form>
 
 <div class="container">
   <%= form_tag boats_path, method: :get do %>
@@ -36,6 +49,6 @@
       </div>
     </div>
     <% end %>
-  </div>
+
 </div>
 
