@@ -1,4 +1,5 @@
-<div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= asset_path('banner_image.jpg') %>);">
+<!-- <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= asset_path('banner_image.jpg') %>);"> -->
+<div class="hero-image" style="background-image:  url(<%= asset_path('banner_image1.jpg') %>);">
   <div class="hero-text">
     <h1>Boaty McBoatface</h1>
     <p>Your dream boat awaits...</p>
@@ -18,7 +19,7 @@
     <% @boats.last(3).each do |boat| %>
     <div class="p-2 bd-highlight">
       <div class="card mb-3 shadow rounded-lg">
-        <%= image_tag("boat#{rand(1...10)}.jpeg", class: "card-img-top") %>
+        <%= image_tag("boat#{rand(1..10)}.jpg", class: "card-img-top") %>
         <div class="card-body">
           <h5 class="card-title">
             <%= link_to boat.name, boat_path(boat) %>
