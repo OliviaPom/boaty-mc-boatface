@@ -1,4 +1,7 @@
-<h1>Edit a Boat</h1>
+<div class="container">
+
+<h1 class="my-4">Edit a Boat </h1>
+
 
 <%= form_with model: @boat, class: "edit-form" do |f|%>
   <%= f.label :brand %>
@@ -13,3 +16,5 @@
   <%= f.text_field :category %>
   <%= f.submit %>
 <% end %>
+
+</div>

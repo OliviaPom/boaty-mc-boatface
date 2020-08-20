@@ -1,4 +1,6 @@
-<h1>More info on Your Selected Boat </h1>
+<div class="container">
+
+<h1 class="my-4">More info on Your Selected Boat </h1>
 
 <div class="container-md">
   <div class="d-flex flex-row bd-highlight mb-3">
@@ -6,25 +8,47 @@
       <div class="card mb-3">
        <%= image_tag("boat#{rand(1...10)}.jpeg", class: "card-img-top") %>
         <div class="card-body">
-          <h2>Name: <%= @boat.name %></h2>
-          <h2>Brand: <%= @boat.brand %></h2>
-          <h3>Location: <%= @boat.location %></h3>
-          <h3>Price by day: £<%= @boat.price %></h3>
-          <h3>Category: <%= @boat.category %></h3>
+          <ul class="list-group">
+          <table class="table table-borderless table-sm">
+              <tr>
+                <td>Name:</td>
+                <td><span class="text-secondary"><%= @boat.name %></span></td>
+              </tr>
+              <tr>
+                <td>Brand:</td>
+                <td><span class="text-secondary"><%= @boat.brand %></span></td>
+              </tr>
+              <tr>
+                <td>Location:</td>
+                <td><span class="text-secondary"><%= @boat.location %></span</td>
+              </tr>
+              <tr>
+                <td>Price per day:</td>
+                <td><span class="text-secondary">£<%= number_with_delimiter(@boat.price, :delimiter => ',')  %></span></td>
+              </tr>
+              <tr>
+                <td>Category:</td>
+                <td><span class="text-secondary"><%= @boat.category %></span></td>
+              </tr>
+            </tbody>
+          </table>
        </div>
       </div>
      </div>
    </div>
+  <div class="p-2 bd-highlight">
+   <h2>Booking form</h2>
+    <%= simple_form_for [ @boat, @booking ] do |f| %>
+      <%= f.input :start_date, as: :date, html5: true %>
+      <%= f.input :end_date, as: :date, html5: true %>
+      <%= f.submit "Submit", class: "btn btn-warning" %>
+    <% end %>
+
+    <%= link_to 'Back to home', root_path, class: "btn btn-primary"%>
+  </div>
+
 </div>
 
-<div class>
-<%= simple_form_for [ @boat, @booking ] do |f| %>
-  <%= f.input :start_date, as: :date, html5: true %>
-  <%= f.input :end_date, as: :date, html5: true %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+
+<!-- closing container -->
 </div>
-
-<%= link_to 'home', root_path, class: "btn btn-primary"%>
-
-
