@@ -15,19 +15,14 @@
            <h5 class="card-title"><strong>my pending bookings</strong></h5>
         <div class="card-body">
           <% @bookings_ive_made.where(accepted: false).each do |booking| %>
-
          <li><i class="fas fa-ship"></i> <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d/%m/%Y") %> to <%= booking.end_date.strftime("%d/%m/%Y") %></li>
-
           <% end %>
           <p class="card-text"></p>
-
             <%= link_to 'Edit your booking', edit_booking_path(booking), class: "btn btn-primary" %>
             <%= link_to "Delete booking", booking_path(booking), class: "btn btn-primary",
                 method: :delete,
                 data: {confirm: "are you sure"} %>
-
           <% end %>
-
         </div>
       </div>
     </div>
