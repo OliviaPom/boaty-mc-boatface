@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 2020_08_20_121341) do
     t.string "category"
     t.string "name"
     t.bigint "user_id"
-    t.float "latitude"
-    t.float "longitude"
     t.integer "number_passenger"
     t.text "description"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_boats_on_user_id"
   end
 
