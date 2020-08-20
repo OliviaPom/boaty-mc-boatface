@@ -20,7 +20,6 @@
             <%= booking.boat.name %> booked from <%= booking.start_date.strftime("%d %m %Y") %> to <%= booking.end_date.strftime("%d %m %Y") %>
           <% end %>
           <p class="card-text"></p>
-
         </div>
       </div>
     </div>
@@ -63,7 +62,6 @@
     </div>
   </div>
 
-
    <div class="row">
       <div class="col-md-10">
         <div class="card mb-3">
@@ -95,7 +93,7 @@
                 <%= link_to 'edit your boat', edit_boat_path(boat), class: "btn btn-primary" %>
               <%= link_to "Delete", boat_path(boat), class: "btn btn-primary",
                 method: :delete,
-                data: {confirm: "are you sure"} %>
+                data: {confirm: "Are you sure to delete #{boat.name}?"} %>
              <% end %>
           </div>
            <%= link_to 'Add A Boat', new_boat_path(@boats), class: "btn btn-primary" %>

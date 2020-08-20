@@ -8,7 +8,6 @@
   </div>
 </div>
 
-
 <div class="container">
 <%= form_tag boats_path, method: :get do %>
   <%= text_field_tag :query,
@@ -25,14 +24,16 @@
   <div class="d-flex flex-row bd-highlight mb-3">
     <% @boats.last(3).each do |boat| %>
     <div class="p-2 bd-highlight">
-      <div class="card mb-3 shadow rounded-lg">
-        <%= image_tag("boat#{rand(1..10)}.jpg", class: "card-img-top") %>
+      <div class="card mb-3 shadow rounded-lg h-100">
+        <% if boat.photo.attached? %>
+          <%= cl_image_tag boat.photo.key, class: "card-img-top" %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title">
             <%= link_to boat.name, boat_path(boat) %>
           </h5>
-          <p class="card-text small"><%= boat.name %> gathers many advantages besides performance, with so much natural light and dynamic looks, comfortable space and elegant design. Her layout and features will bring you fantastic moments, whether at sea or mooring in a bay.</p>
-          <p class="card-text"><i class="fas fa-map-marker-alt"></i> <small class="text-muted"><%= boat.location %></small></p>
+          <p class="card-text small home-card-text"><%= boat.description %></p>
+          <p class="card-text "><i class="fas fa-map-marker-alt"></i> <small class="text-muted"><%= boat.location %></small></p>
           <%= link_to 'See details', boat_path(boat), class: "btn btn-sm btn-primary"%>
         </div>
       </div>
