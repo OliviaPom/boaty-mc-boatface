@@ -10,7 +10,11 @@
     font-size: 1.4rem;
   }
 
-.thumbnail{
+.thumbnail-home{
+  width:352px;
+}
+
+.thumbnail, .thumbnail-home{
   display:block;
   transition: opacity .5s ease-out;
   -moz-transition: opacity .5s ease-out;
@@ -18,7 +22,7 @@
   -o-transition: opacity .5s ease-out;
 }
 
-.thumbnail:hover{
+.thumbnail:hover, .thumbnail-home:hover{
   opacity: .8;
   -webkit-animation: fade 5s;
   animation: fade 5s;
@@ -27,7 +31,7 @@
 }
 
 .home-card-text{
-  height: 100px
+  min-height: 100px;
 }
 
 .rounded-lg{
