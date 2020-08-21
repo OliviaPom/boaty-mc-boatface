@@ -9,6 +9,7 @@
 
    <div class="row1">
       <div class="col-md-10 offset-md-1">
+
   <h2 id="speakers" class="text-left mt-5 text-muted"><i class="far fa-clipboard fa-lg"></i> Your Bookings</h2>
 
           <div class="card mb-3">
@@ -34,6 +35,8 @@
               <% end %>
             </div>
           </div>
+
+
         </div>
     </div>
   </div>
@@ -119,7 +122,7 @@
                 </li>
               <% end %>
              <%@my_boats.each do |boat| %>
-                <%= link_to 'edit your boat', edit_boat_path(boat), class: "btn btn-primary" %>
+                <%= link_to 'Edit', edit_boat_path(boat), class: "btn btn-primary" %>
               <%= link_to "Delete", boat_path(boat), class: "btn btn-primary",
                 method: :delete,
                 data: {confirm: "Are you sure to delete #{boat.name}?"} %>

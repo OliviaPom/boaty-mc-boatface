@@ -2,8 +2,14 @@
   <div class="p-2 bd-highlight">
    <h2>Edit booking form here</h2>
     <%= simple_form_for [ @booking ] do |f| %>
+    <div class="row">
+    <div class="col">
       <%= f.input :start_date, as: :date, html5: true %>
+    </div>
+    <div class="col">
       <%= f.input :end_date, as: :date, html5: true %>
+       </div>
+   </div>
       <%= f.submit "Submit", class: "btn btn-warning" %>
     <% end %>
   </div>
