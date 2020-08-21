@@ -4,15 +4,32 @@
 <h1 class="my-4">List your Boat </h1>
 
     <%= simple_form_for [ @boat ] do |f| %>
+     <div class="form-row">
+    <div class="form-group col-md-6">
     <%= f.input :name %>
+  </div>
+  <div class="form-group col-md-6">
     <%= f.input :location %>
+  </div>
+   <div class="form-group col-md-3">
     <%= f.input :price, input_html: { placeholder: '£ per day..'}%>
+  </div>
+  <div class="form-group col-md-3">
     <%= f.input :brand %>
+</div>
+<div class="form-group col-md-3">
     <%= f.input :category %>
+  </div>
+<div class="form-group col-md-3">
     <%= f.input :number_passenger %>
+  </div>
+    <div class="form-group col-md-12">
     <%= f.input :description, as: :text, :input_html => { cols: 5, rows: 6, maxlength: 600} %>
+  </div>
     <%= f.input :photo, as: :file, :label => "Upload boat photo",class: "btn btn-primary" %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 
 </div>
+
+

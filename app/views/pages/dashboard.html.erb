@@ -24,8 +24,8 @@
           </li>
           
           <p class="card-text"></p>
-            <%= link_to 'Edit your booking', edit_booking_path(booking), class: "btn btn-primary" %>
-            <%= link_to "Delete booking", booking_path(booking), class: "btn btn-primary",
+            <%= link_to 'Edit', edit_booking_path(booking), class: "btn btn-primary" %>
+            <%= link_to "Delete", booking_path(booking), class: "btn btn-primary",
                 method: :delete,
                 data: {confirm: "are you sure"} %>
           <% end %>
@@ -111,7 +111,7 @@
                 </li>
               <% end %>
              <%@my_boats.each do |boat| %>
-                <%= link_to 'edit your boat', edit_boat_path(boat), class: "btn btn-primary" %>
+                <%= link_to 'Edit', edit_boat_path(boat), class: "btn btn-primary" %>
               <%= link_to "Delete", boat_path(boat), class: "btn btn-primary",
                 method: :delete,
                 data: {confirm: "Are you sure to delete #{boat.name}?"} %>
