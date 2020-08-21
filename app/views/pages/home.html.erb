@@ -38,7 +38,7 @@
         <% end %>
         <div class="card-body">
           <h5 class="card-title">
-            <%= link_to boat.name, boat_path(boat) %>
+            <%= link_to boat.name.capitalize, boat_path(boat) %>
           </h5>
           <p class="card-text small home-card-text"><%= boat.description %></p>
           <p class="card-text "><i class="fas fa-map-marker-alt"></i> <small class="text-muted"><%= boat.location %></small></p>
