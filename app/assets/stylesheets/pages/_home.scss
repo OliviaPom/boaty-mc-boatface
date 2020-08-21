@@ -4,18 +4,19 @@
   color:$light-gray;
 }
 
-
-.container-search-bar{
-
+.btn{
+  border-radius: 5px;
 }
 
 
 
-.btn{
-  border-radius: 5px;
+a:hover{
+  color:#4EA0AE;
+  text-decoration: none;
 }
 
 
 .carousel-inner img {
   margin: auto;
 }
+
