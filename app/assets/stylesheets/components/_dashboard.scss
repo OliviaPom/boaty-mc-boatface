@@ -5,6 +5,22 @@
   margin-bottom: 15px;
 }
 
+.sub-head{
+  flex-direction: row!important;
+}
+
+.sub-head > h2{
+  display: inline-block;
+  text-align:left;
+}
+
+.sub-head > .btn{
+  display: inline-block;
+  text-align:right;
+  color:#fff;
+  vertical-align: 0.5em;
+}
+
 /* The hero image */
 .dashboard_image {
   display: flex;
