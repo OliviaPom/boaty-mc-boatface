@@ -2,6 +2,15 @@ body, html {
     height: 100%;
 }
 
+.dashboard {
+
+}
+
+.dashboard h2{
+  font-size:1.8em;
+  margin-bottom: 15px;
+}
+
 /* The hero image */
 .dashboard_image {
   display: flex;
@@ -27,7 +36,6 @@ body, html {
   padding-left: 60px;
   width:100%;
   h1 {
-    font-family: 'Nanum Myeongjo', serif;
     font-size: 30px;
     text-align:center;
   }
@@ -36,17 +44,18 @@ body, html {
   }
 }
 
+.card-header{
+    background-color:#eee;
+}
+
 .card-title-dashboard {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    color: white;
+    font-size:1.2em;
 }
 
 .row1 img {
-  height: 60px;
-  width: 100%;
-  object-fit: cover;
+  // height: 60px;
+  // width: 100%;
+  // object-fit: cover;
 }
 
 
@@ -59,6 +68,6 @@ li {
   list-style-type: none;
 }
 
-.card-body {
-   word-spacing: 8px;
+.dashboard .card-img{
+  margin: 1.25rem;
 }

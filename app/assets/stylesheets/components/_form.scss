@@ -4,6 +4,32 @@ body {
   background: HSLA(0, 0%, 96%, 1.00);
 }
 
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size:16px;
+  color:#ccc;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size:16px;
+  color:#ccc;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size:16px;
+  color:#ccc;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size:16px;
+  color:#ccc;
+}
+
+input:focus, textarea:focus, select:focus{
+        outline: none;
+}
+
+.search-input::placeholder{
+
+}
+
 .product-search {
   margin-top: 100px;
   display: flex;
@@ -13,18 +39,23 @@ body {
   margin: 0 auto;
   box-shadow: rgba(0,0,0,.172549) 0 6px 12px 0;
   cursor: pointer;
+  border-radius: 1em;
 }
 
 .search-element {
-  display: flex;
-  flex-grow: 2;
-  flex-direction: column;
+  // display: flex;
+  // flex-grow: 2;
+  // flex-direction: column;
   border-right: 1px solid rgba(10,10,10,.1);
-  padding: 1em;
+  padding:0 1em;
 }
 
 .search-label {
-  font-weight: 700;
+  color:#4EA0AE;
+  font-size:1.2em;
+  padding:0 0 0 6px;
+  text-align:left;
+  margin:0;
 }
 
 .search-input {
@@ -32,9 +63,13 @@ body {
   appearance: none;
   outline: none;
   width: 100%;
-  font-size: 1.2em;
+  font-size:16px;
   line-height: 1.2em;
   margin-top: 5px;
+  margin-bottom: 5px;
+  text-align:left;
+  padding-left:6px;
+  color:#aaa;
 }
 
 .search-input:focus {
@@ -44,22 +79,36 @@ body {
 .search-button {
   display: inline-block;
   flex-grow: 1;
-  height: 80px;
-  line-height: 80px;
+  height: 60px;
+  line-height: 60px;
   padding: 0 2em;
   text-align: center;
   font-size: 1.2em;
   font-weight: 100;
-  border: 0;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   color: white;
-  background-color: rgb(57, 73, 137);
+  background-color: #394989;
   transition: background-color 0.8s ease;
+  border-radius: 0 0.8em 0.8em 0;
+  margin:0.2em;
+  border:none;
+}
+
+.search-button:focus{
+  background-color:#4356a1;
+  transform: translateY(1px);
+  border:none;
+}
+
+.search-button:hover{
+  background-color:#4356a1;
+  color:#ced5f2;
 }
 
 .little-form {
   box-sizing:border-box
 }
+
