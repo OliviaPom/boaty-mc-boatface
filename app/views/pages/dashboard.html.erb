@@ -134,18 +134,16 @@
                <div class="col-md-5">
                   <% if boat.photos.attached? %>
                     <%= cl_image_tag boat.photos[0].key, class: "card-img" %>
-
                   <% end %>
                </div>
                <div class="col-md-6">
                     <div class="card-body">
                       <p class="card-text purple"><%= boat.name %></p>
-                      <%@my_boats.each do |boat| %>
+
                         <%= link_to 'Edit', edit_boat_path(boat), class: "btn btn-primary" %>
                         <%= link_to "Delete", boat_path(boat), class: "btn btn-primary",
                           method: :delete,
                           data: {confirm: "Are you sure to delete #{boat.name}?"} %>
-                        <% end %>
                     </div>
                 </div>
                <% end %>
