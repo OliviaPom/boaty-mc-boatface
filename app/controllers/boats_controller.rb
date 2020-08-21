@@ -5,7 +5,7 @@ class BoatsController < ApplicationController
       @boats = Boat.all
     else
       params[:query]
-       @boats = @boats.where('category ILIKE ?', params[:query])
+       @boats = @boats.where('category ILIKE ?', "%#{params[:query]}%")
     end
     if params[:location].nil? || (params[:location] == "")
       @boats = Boat.all
