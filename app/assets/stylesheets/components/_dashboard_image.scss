@@ -25,17 +25,19 @@ body, html {
   // margin-left: 24px;
   color: white;
   padding-left: 60px;
+  width:100%;
   h1 {
     font-family: 'Nanum Myeongjo', serif;
-    font-size: 60px;
+    font-size: 30px;
+    text-align:center;
   }
   p {
     font-size: 24px;
   }
 }
 
-.card-title {
-      position: absolute;
+.card-title-dashboard {
+    position: absolute;
     left: 15px;
     top: 15px;
     color: white;

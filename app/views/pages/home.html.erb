@@ -1,10 +1,13 @@
 <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= asset_path('dashboard2.jpeg') %>);">
-  <div class="hero-text">
-    <h1>Boaty McBoatface</h1>
-    <p>Your dream boat awaits...</p>
+  <div class="container">
+    <div class="hero-text">
+      <h1>Boaty McBoatface</h1>
+      <p>Your dream boat awaits...</p>
+    </div>
   </div>
 </div>
 
+<div class="container">
   <form action="/boats" method="get">
   <div class="product-search">
       <div class="search-element">
@@ -17,7 +20,7 @@
       </div>
       <input type="submit" class="search-button">
   </div>
-</form>
+  </form>
 
   <!-- iterate over to show 3 boats as hot offers eg -->
   <h2 class="my-4">Our newest boats</h2>
@@ -40,6 +43,8 @@
       </div>
     </div>
     <% end %>
+  </div>
 
+<!-- container closing div-->
 </div>
 
