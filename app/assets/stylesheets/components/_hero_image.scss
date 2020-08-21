@@ -20,16 +20,23 @@ body, html {
 
 /* Place text in the middle of the image */
 .hero-text {
+  justify-content: left;
   text-align: left;
-  margin-left: 24px;
+  margin-left: 0px;
   color: white;
-  padding-left: 60px;
+  padding-left: 0px;
+
   h1 {
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 80px;
+    font-family: 'Libre Franklin';
+    font-size: 100px;
+    text-shadow: 2px 2px #4EA0AE;
+    letter-spacing: 5px;
   }
+
   p {
     font-size: 24px;
+    font-family: 'Libre Franklin';
+    padding-top: 10px;
   }
 }
 
