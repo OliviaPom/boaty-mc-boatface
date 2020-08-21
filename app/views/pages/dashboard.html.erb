@@ -134,8 +134,8 @@
           <div class="row no-gutters justify-content-between">
                <% @my_boats.each do |boat| %>
                <div class="col-md-5">
-                  <% if boat.photo.attached? %>
-                    <%= cl_image_tag boat.photo.key, class: "card-img" %>
+                  <% if boat.photos.attached? %>
+                    <%= cl_image_tag boat.photos[0].key, class: "card-img" %>
 
                   <% end %>
                </div>
