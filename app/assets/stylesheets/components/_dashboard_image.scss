@@ -1,22 +1,22 @@
-// body, html {
-//     height: 100%;
-// }
+body, html {
+    height: 100%;
+}
 
-// /* The hero image */
-// .dashboard_image {
-//   display: flex;
-//   justify-content: left;
-//   align-items: center;
+/* The hero image */
+.dashboard_image {
+  display: flex;
+  justify-content: left;
+  align-items: center;
 
-//   /* Set a specific height */
-//   height: 40%;
+  /* Set a specific height */
+  height: 40%;
 
-//   /* Position and center the image to scale nicely on all screens */
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   position: relative;
-// }
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
 /* Place text in the middle of the image */
 .dashboard_text {
