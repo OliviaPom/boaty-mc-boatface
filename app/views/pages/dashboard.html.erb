@@ -18,8 +18,8 @@
           <div class="row no-gutters justify-content-between">
             <% @bookings_ive_made.where(accepted: false).each do |booking| %>
             <div class="col-md-5">
-               <% if booking.boat.photo.attached? %>
-                  <%= cl_image_tag booking.boat.photo.key, class: "card-img" %>
+               <% if booking.boat.photos.attached? %>
+                  <%= cl_image_tag booking.boat.photos[0].key, class: "card-img" %>
                <% end %>
             </div>
             <div class="col-md-6">
@@ -47,8 +47,8 @@
           <div class="row no-gutters justify-content-between">
                <% @bookings_ive_made.where(accepted: true).each do |booking| %>
             <div class="col-md-5">
-              <% if booking.boat.photo.attached? %>
-                    <%= cl_image_tag booking.boat.photo.key, class: "card-img" %>
+              <% if booking.boat.photos.attached? %>
+                    <%= cl_image_tag booking.boat.photos[0].key, class: "card-img" %>
               <% end %>
             </div>
             <div class="col-md-6">
@@ -70,14 +70,16 @@
       <div class="col-md-10 offset-md-1">
          <h2 id="speakers" class="text-left mt-5 text-muted">Your Boats</h2>
         <div class="card mb-3">
+
           <div class="card-header">
             <h5 class="card-title-dashboard "><strong>Pending Requests For My Boats</strong></h5>
           </div>
           <div class="row no-gutters justify-content-between">
              <% @bookings_people_have_made_for_my_boats.where(accepted: false).each do |booking|%>
             <div class="col-md-5">
-              <% if booking.boat.photo.attached? %>
-                <%= cl_image_tag booking.boat.photo.key, class: "card-img" %>
+              <% if booking.boat.photos.attached? %>
+                <%= cl_image_tag booking.boat.photos[0].key, class: "card-img" %>
+
               <% end %>
             </div>
             <div class="col-md-6">
@@ -102,9 +104,10 @@
             </div>
             <div class="row no-gutters justify-content-between">
                 <% @bookings_people_have_made_for_my_boats.where(accepted: true).each do |booking|%>
+
                  <div class="col-md-5">
-                   <% if booking.boat.photo.attached? %>
-                      <%= cl_image_tag booking.boat.photo.key, class: "card-img" %>
+                   <% if booking.boat.photos.attached? %>
+                      <%= cl_image_tag booking.boat.photos[0].key, class: "card-img" %>
                     <% end %>
                  </div>
                  <div class="col-md-6">
@@ -116,6 +119,7 @@
                  </div>
               </div>
             <% end %>
+
             </div>
         </div>
    </div>
@@ -123,6 +127,7 @@
    <div class="row1">
       <div class="col-md-10 offset-md-1">
         <div class="card mb-3">
+
           <div class="card-header">
               <h5 class="card-title-dashboard "><strong>View Your Boats</strong></h5>
           </div>
@@ -131,6 +136,7 @@
                <div class="col-md-5">
                   <% if boat.photo.attached? %>
                     <%= cl_image_tag boat.photo.key, class: "card-img" %>
+
                   <% end %>
                </div>
                <div class="col-md-6">
