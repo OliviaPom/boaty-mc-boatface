@@ -31,8 +31,8 @@
     <div class="p-2 bd-highlight">
       <div class="card mb-3 shadow rounded-lg h-100">
         <%= link_to boat_path(boat), class: "thumbnail" do %>
-        <% if boat.photo.attached? %>
-          <%= cl_image_tag boat.photo.key, class: "card-img-top" %>
+        <% if boat.photos.attached? %>
+          <%= cl_image_tag boat.photos[0].key, class: "card-img-top" %>
         <% end %>
         <% end %>
         <div class="card-body">
