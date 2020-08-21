@@ -5,8 +5,6 @@
 </div>
 
 <div class= "container dashboard">
-
-
    <div class="row1">
       <div class="col-md-10 offset-md-1">
 
@@ -141,13 +139,13 @@
                </div>
                <div class="col-md-6">
                     <div class="card-body">
-                      <p class="card-text"><%= boat.name %></p>
+                      <p class="card-text purple"><%= boat.name %></p>
                       <%@my_boats.each do |boat| %>
-                <%= link_to 'Edit', edit_boat_path(boat), class: "btn btn-primary" %>
-              <%= link_to "Delete", boat_path(boat), class: "btn btn-primary",
-                method: :delete,
-                data: {confirm: "Are you sure to delete #{boat.name}?"} %>
-             <% end %>
+                        <%= link_to 'Edit', edit_boat_path(boat), class: "btn btn-primary" %>
+                        <%= link_to "Delete", boat_path(boat), class: "btn btn-primary",
+                          method: :delete,
+                          data: {confirm: "Are you sure to delete #{boat.name}?"} %>
+                        <% end %>
                     </div>
                 </div>
                <% end %>

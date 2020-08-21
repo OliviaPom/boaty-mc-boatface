@@ -5,7 +5,7 @@
   <div class="d-flex flex-row bd-highlight mb-3">
      <div class="p-2 bd-highlight">
       <div class="card mb-3">
-       <%= image_tag("boat#{rand(1...10)}.jpeg", class: "card-img-top") %>
+       <%= render 'shared/carousel', boats: @boats %>
         <div class="card-body">
           <ul class="list-group">
           <table class="table table-borderless table-sm">
@@ -57,31 +57,6 @@
             <%= f.submit "Submit", class: "btn btn-primary" %>
             <% end %>
   </div>
-
-
-<!-- THE CAROUSEL CODE - NEEDS IMAGES FROM CLOUDINARY  -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-        <%= cl_image_tag @boat.photos[0].key, class: "d-block w-50" %>
-      </div>
-    <% @boat.photos.each_with_index do |photo, index| %>
-      <% if index != 0 %>
-        <div class="carousel-item">
-          <%= cl_image_tag photo.key, class: "d-block w-50" %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 
 <!-- closing container -->
 </div>
