@@ -27,6 +27,7 @@ gem 'devise'
 # gem 'bootstrap-datepicker-rails'
 gem 'cloudinary', '~> 1.12.0'
 
+gem 'dotenv-rails', groups: [:development, :test]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'geocoder'
