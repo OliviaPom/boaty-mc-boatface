@@ -6,7 +6,7 @@
         <%= link_to boat_path(boat), class: "thumbnail" do %>
          <!-- image_tag("boat#{rand(1..10)}.jpg", class: "card-img-top") -->
            <% if boat.photos.attached? %>
-            <%= cl_image_tag boat.photos.key, class: "card-img-top" %>
+            <%= cl_image_tag boat.photos.first.key, class: "card-img-top" %>
            <% end %>
         <% end %>
         <div class="card-body">
