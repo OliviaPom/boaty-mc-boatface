@@ -8,7 +8,7 @@
         <% @boat.photos.each_with_index do |photo, index| %>
           <% if index != 0 %>
             <div class="carousel-item">
-              <%= cl_image_tag photo.key, class: "d-block w-50" %>
+              <%= cl_image_tag photo.key, class: "d-block w-100" %>
             </div>
           <% end %>
         <% end %>
